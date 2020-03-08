@@ -4,7 +4,7 @@
 
 #include <bits/stdc++.h>
 
-const int P = 257;
+const int P = 7;
 
 using namespace std;
 
