@@ -1,1 +1,1 @@
-g++ -o main functions.cpp main.cpp encoder.cpp decoder.cpp -g
+g++ -o main functions.cpp main.cpp encoder.cpp decoder.cpp -O2

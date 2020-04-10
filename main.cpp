@@ -17,7 +17,7 @@ bool same_vector(vector<int> a, vector<int> b)
 int main()
 {
 	srand(time(0));
-	int k, n, x;
+	int k, n, x, cnt = 0;
 	vector<int> src, code, ans;
 	cin >> k >> n;
 
@@ -26,32 +26,30 @@ int main()
 		src.clear();
 		for(int i=0; i<k; i++) src.push_back(rand()%P);
 
-		cout << "source : ";
+		/*cout << "source : ";
 		for(auto i : src) cout << i << " ";
-		cout << endl;
+		cout << endl;*/
 
 		code = encode(src, n);
 
-		cout << "transmit : ";
+		/*cout << "transmit : ";
 		for(auto i : code) cout << i << " ";
-		cout << endl;
+		cout << endl;*/
 
 		code = disturb(code, rand()%((n-k)/2+1));
 
-		cout << "recieve : ";
+		/*cout << "recieved : ";
 		for(auto i : code) cout << i << " ";
-		cout << endl;
+		cout << endl;*/
 
 		ans = decode(code, k);
 
-		cout << "ans : ";
+		/*cout << "ans : ";
 		for(auto i : ans) cout << i << " ";
-		cout << endl;
+		cout << endl;*/
 
-		if(!same_vector(ans, src))
-		{
-			break;
-		}
+		if(!same_vector(ans, src)) break;
+		else printf("Correct: %d\n", ++cnt);
 	}
 	return 0;
 }
